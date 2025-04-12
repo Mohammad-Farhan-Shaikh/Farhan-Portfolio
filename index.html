@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Farhan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=sentient@300,400,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+        background-color: lightgrey;
+      }
+
+      header {
+        height: 15%;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+      }
+
+      #logo a {
+        font-family: "Clash Display", sans-serif;
+        font-size: 28px;
+        text-decoration: none;
+        color: antiquewhite;
+        font-weight: 450;
+      }
+
+      .navbar ul {
+        display: flex;
+        gap: 30px;
+      }
+
+      .navbar ul li {
+        list-style: none;
+      }
+
+      .navbar ul li a {
+        font-family: "Clash Display", sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        color: antiquewhite;
+        transition: 0.3s all;
+      }
+
+      .navbar ul li a:hover {
+        color: darkgrey;
+      }
+
+      .navbar ul li .hire-link {
+        padding: 3px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar ul li .hire-link:hover {
+        color: rgb(17, 13, 13);
+        background-color: rgb(255, 255, 255);
+      }
+
+      main {
+        width: 100%;
+        height: auto;
+      }
+
+      section.hero {
+        width: 100%;
+        background-color: lightgrey;
+        padding: 60px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .hero-section {
+        text-align: left;
+        width: 80%;
+        max-width: 1000px;
+        padding: 0 35px;
+      }
+
+      .hero-sec h3 {
+        font-size: 2.4rem;
+        font-family: "Clash Display", sans-serif;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .hero-sec h3 span {
+        font-size: 2.8rem;
+        font-weight: 550;
+        padding: 3px 20px;
+        border-radius: 5px;
+        font-family: "Clash Display", sans-serif;
+        transition: background-color 0.3s ease;
+      }
+
+      .hero-sec h3 span:hover {
+        cursor: pointer;
+        color: rgb(17, 13, 13);
+        background-color: rgb(255, 255, 255);
+      }
+
+      .hero-sec h4 {
+        font-size: 1.6rem;
+        font-family: "Sentient", serif;
+        font-weight: 500;
+        margin: 10px 0;
+      }
+
+      .hero-sec p {
+        font-size: 1.1rem;
+        font-weight: 450;
+        line-height: 1.6;
+        font-family: "Poppins", sans-serif;
+        margin-top: 10px;
+        max-width: 800px;
+      }
+
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+
+      .social-links p {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      .social-links a {
+        text-decoration: none;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        padding: 3px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        cursor: pointer;
+        color: rgb(17, 13, 13);
+        background-color: rgb(255, 255, 255);
+      }
+
+      .hero-contact {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-top: 40px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hero-contact p {
+        font-family: "Clash Display", serif;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-weight: 420;
+      }
+
+      .input-wrapper {
+        position: relative;
+        width: 340px;
+      }
+
+      .input-wrapper input {
+        padding: 10px 45px 10px 10px;
+        height: 50px;
+        width: 100%;
+        font-family: "Clash Display", serif;
+        font-size: 1.2rem;
+        border: 1px solid #bbb8b8;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.452);
+        background-color: white;
+        color: #333;
+      }
+
+      .input-wrapper input:focus {
+        border: 2px solid #a9aaaa;
+        outline: none;
+      }
+
+      .input-wrapper button {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        height: 34px;
+        width: 34px;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .input-wrapper button:hover {
+        background-color: #333;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .input-wrapper button i {
+        font-size: 16px;
+      }
+
+      .about-section {
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-container {
+        width: 80%;
+        padding: 0 26px 35px;
+        font-family: "Poppins", sans-serif;
+        color: #222;
+      }
+
+      .about-container h2 {
+        font-size: 2.5rem;
+        text-align: right;
+        font-family: "Clash Display", sans-serif;
+        margin: 30px 0 30px;
+        color: #111;
+      }
+
+      .about-container p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      .skills-section {
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .skills-section .container {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+      }
+
+      .skills-section .container .section-title {
+        text-align: left;
+        margin: 20px;
+        font-size: 2.5rem;
+        font-family: "clash display", serif;
+        letter-spacing: 1px;
+        color: #111;
+      }
+
+      .skills-section .container .skill-category {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 10px 0;
+        gap: 40px;
+      }
+
+      .skills-section .container .skill-category h3 {
+        font-size: 1.2rem;
+        font-family: "Clash Display", sans-serif;
+        min-width: 220px; /* 👈 Category fixed width */
+        margin: 0;
+        padding-top: 10px;
+        font-weight: 500;
+        color: #222;
+      }
+
+      .skills-section .container .skill-category .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .skills-section .container .skill-category .skills-grid .skill-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 12px 16px; /* 👈 uniform padding */
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        min-width: 80px;
+      }
+
+      .skills-section
+        .container
+        .skill-category
+        .skills-grid
+        .skill-card:hover {
+        background-color: #ececec; 
+        transform: scale(1.05);
+      }
+
+      .skills-section .container .skill-category .skills-grid .skill-card i {
+        font-size: 3.5rem;
+        color: #333;
+      }
+
+      .skills-section .container .skill-category .skills-grid .skill-card span {
+        font-size: 0.9rem;
+        font-family: "Clash Display", sans-serif;
+        text-align: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div id="logo">
+        <a href="#">Farhan Portfolio</a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutme">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hireme" class="hire-link">Hire me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-section">
+          <div class="hero-sec">
+            <h3>I'm <span>Mohammad Farhan Shaikh</span></h3>
+            <h4>Software Developer</h4>
+            <p>
+              "Hi, I'm a passionate software developer who loves exploring new
+              technologies and constantly pushing my limits. Whether it's
+              learning a new framework or diving deep into problem-solving, I
+              enjoy every step of the journey. For me, growth comes from
+              curiosity - and I'm always curious to learn, build, and improve."
+            </p>
+          </div>
+
+          <div class="social-links">
+            <p>Know me :</p>
+            <a href="https://www.linkedin.com/in/your-username" target="_blank"
+              >LinkedIn</a
+            >
+            |
+            <a href="https://github.com/your-username" target="_blank"
+              >GitHub</a
+            >
+            |
+            <a href="https://www.youtube.com/@your-channel" target="_blank"
+              >YouTube</a
+            >
+          </div>
+
+          <div class="hero-contact">
+            <p>Hire Me:</p>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="hireme@gmail.com"
+              />
+              <button type="submit">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="aboutme" class="about-section">
+        <div class="about-container">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm <strong>Mohammad Farhan Shaikh</strong>, a passionate and
+            detail-oriented <strong>Software Developer</strong> with hands-on
+            experience in building dynamic, responsive, and scalable web and
+            software solutions. I specialize in creating seamless digital
+            experiences using a diverse stack of technologies.
+          </p>
+          <p>
+            With strong proficiency in
+            <strong>HTML, CSS, JavaScript, Python, PHP, Java</strong> and
+            databases like <strong>MySQL</strong>, I enjoy turning complex
+            problems into intuitive, user-friendly applications. My experience
+            with <strong>Git, GitHub</strong>, and working across
+            <strong>Linux</strong> and <strong>Windows</strong> platforms allows
+            me to adapt to different environments and collaborate efficiently in
+            teams.
+          </p>
+          <p>
+            I believe that clean code, smart architecture, and continuous
+            learning are key to building impactful software. Whether it's a
+            frontend interface or backend logic, I strive to write code that is
+            both elegant and maintainable.
+          </p>
+          <p>
+            Currently, I'm looking to work on innovative projects where I can
+            contribute, learn, and grow as a developer while making a meaningful
+            impact.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+
+          <!-- Web Development -->
+          <div class="skill-category">
+            <h3>Web Development</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-brands fa-bootstrap"></i>
+                <span>Bootstrap</span>
+              </div>
+              <div class="skill-card">
+                <i class="fa-brands fa-php"></i>
+                <span>PHP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-c-line-wordmark colored"></i>
+                <span>C</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <span>C++</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-java-plain"></i>
+                <span>Java</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-python-plain"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DB Management -->
+          <div class="skill-category">
+            <h3>Database</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-mysql-plain-wordmark"></i>
+                <span>MySQL</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-mongodb-plain-wordmark"></i>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Operating System -->
+          <div class="skill-category">
+            <h3>Operating System</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-windows8-original"></i>
+                <span>Windows</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-linux-plain"></i>
+                <span>Linux</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- API Testing -->
+          <div class="skill-category">
+            <h3>API Testing</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-postman-plain"></i>
+                <span>Postman</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version Control -->
+          <div class="skill-category">
+            <h3>Version Control</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-github-original-wordmark"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-git-plain-wordmark"></i>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Development Tools -->
+          <div class="skill-category">
+            <h3>Development Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="devicon-vscode-plain"></i>
+                <span>VS Code</span>
+              </div>
+              <div class="skill-card">
+                <i class="devicon-intellij-plain"></i>
+                <span>IntelliJ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
