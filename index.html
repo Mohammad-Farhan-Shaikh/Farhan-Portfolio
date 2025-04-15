@@ -97,7 +97,7 @@
         display: none;
       }
 
-      .hirebtn{
+      .hirebtn {
         display: none;
       }
 
@@ -184,7 +184,7 @@
         transition: background-color 0.3s ease;
       }
 
-      .social-links i{
+      .social-links i {
         display: none;
       }
 
@@ -617,26 +617,19 @@
 
         .header .hirebtn {
           border: 1px solid antiquewhite;
-          padding: 9px 10px;
-          border-radius: 5px;
-          display: block;
+          padding: 10px 20px;
+          border-radius: 8px;
+          display: inline-block;
           cursor: pointer;
-          font-family: "clash display", serif;
-          font-size: 1.2rem;
-          font-weight: 450;
-          text-decoration: none;
+          font-family: "Clash Display", serif;
+          font-size: 1.1rem;
+          font-weight: 500;
+          background-color: transparent;
           color: antiquewhite;
+          text-decoration: none;
           letter-spacing: 1px;
-          outline: none;
-        }
-
-        .header .hirebtn .hire-link {
-          text-decoration: none;
-          color: antiquewhite;
-        }
-
-        .header .hirebtn .hire-link:hover {
-          color: #2b2b2b;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 10px rgba(255, 248, 220, 0.1);
         }
 
         .header .hirebtn:hover {
@@ -644,89 +637,168 @@
           color: #2b2b2b;
           border-color: #cbb891;
           transform: scale(1.07);
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(255, 248, 220, 0.3);
+          box-shadow: 0 6px 20px rgba(255, 248, 220, 0.4);
         }
 
+        /* Remove all styling from the <a> inside */
+        .header .hirebtn a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+
         main {
-        width: 100%;
-        height: auto;
-      }
+          width: 100%;
+          height: auto;
+        }
 
-      .hero-section {
-        text-align: left;
-        width: 80%;
-        max-width: 1000px;
-        padding: 0px 9px;
-      }
+        .hero-section {
+          text-align: left;
+          width: 80%;
+          max-width: 1000px;
+          padding: 0px 9px;
+        }
 
-      .hero-sec h3{
-        font-size: 1.5rem;
-      }
+        .hero-sec h3 {
+          font-size: 1.5rem;
+        }
 
-      .hero-sec h3 span{
-        font-size: 2.2rem;
-        display: block;
-      }
+        .hero-sec h3 span {
+          font-size: 2.2rem;
+          display: block;
+        }
 
-      .hero-sec h4{
-        font-size: 1.3rem;
-        margin-left: 20px;
-      }
+        .hero-sec h4 {
+          font-size: 1.3rem;
+          margin-left: 20px;
+        }
 
-      .hero-sec p{
-        font-size: .8rem;
-        margin: 0 20px;
-      }
+        .hero-sec p {
+          font-size: 0.8rem;
+          margin: 0 20px;
+        }
 
-      .social-links{
-        gap: 3px;
-      }
+        .social-links {
+          gap: 3px;
+        }
 
-      .social-links p{
-        font-size: .9rem;
-        margin: 0 20px;
-        
-      }
+        .social-links p {
+          font-size: 0.9rem;
+          margin: 0 20px;
+        }
 
-      .social-links a{
-        display: none;
-      }
+        .social-links a {
+          display: none;
+        }
 
-      .social-links i{
-        display: block;
-        margin: 10px;
-        font-size: 1.4rem;
-        padding: 5px 8px;
-        border-radius: 4px;
-        color: #1e1e1e;
-        transition: all .3s ease;
-      }
-      
-      .social-links i:hover{
-        color: rgb(17, 13, 13);
-        background-color: rgb(255, 255, 255);
-      }
+        .social-links i {
+          display: block;
+          margin: 10px;
+          font-size: 1.4rem;
+          padding: 5px 8px;
+          border-radius: 4px;
+          color: #1e1e1e;
+          transition: all 0.3s ease;
+        }
 
-      .hero-contact{
-        /* gap: 6px; */
-        width: 90%;
-        margin-top: 10px;
-      }
+        .social-links i:hover {
+          color: rgb(17, 13, 13);
+          background-color: rgb(255, 255, 255);
+        }
 
-      ::placeholder{
-        font-size: .9rem;
-      }
+        .hero-contact {
+          /* gap: 6px; */
+          width: 90%;
+          margin-top: 10px;
+        }
 
-      .hero-contact p{
-        margin: 0 20px;
-        font-size: 1rem;
-      } 
+        ::placeholder {
+          font-size: 0.9rem;
+        }
 
-      .hero-contact input{
-        font-size: .9rem;
-      }
+        .hero-contact p {
+          margin: 2px 0 0 20px;
+          font-size: 1rem;
+          white-space: nowrap;
+        }
 
+        .hero-contact input {
+          font-size: 0.9rem;
+        }
+
+        .about-section .about-container h2 {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+
+        .about-section .about-container p {
+          font-size: 0.8rem;
+          margin: 8px 0;
+          line-height: 18px;
+        }
+
+        .skills-section .container .section-title {
+          font-size: 2rem;
+        }
+
+        .skills-section .container .skill-category {
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .skills-section .container .skill-category h3 {
+          margin: 0 64px 0 0;
+        }
+
+        .contact-form{
+          gap: 12px;
+        }
+
+        .contact-section .contact-container h2 {
+          font-size: 2rem;
+          margin-top: -42px;
+        }
+
+        .contact-section .contact-container p {
+          font-size: 1rem;
+        }
+
+        .contact-section .contact-container p {
+          font-size: 0.9rem;
+          margin: 0 26px 20px 4px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          margin: 0 35px 0 0;
+        }
+
+        .contact-btn {
+          padding: 10px 15px;
+          font-size: 0.9rem;
+          letter-spacing: 0.2px;
+        }
+
+        .contact-btn i {
+          font-size: 0.7rem;
+        }
+
+        .footer-left h3 {
+          font-family: "Clash Display", sans-serif;
+          font-size: 1.2rem;
+          margin-bottom: 3px;
+          font-weight: 450;
+          color: #fff;
+        }
+
+        .footer-left p {
+          font-size: 0.75rem;
+          color: #aaa;
+          margin-bottom: 10px;
+        }
       }
     </style>
   </head>
@@ -738,7 +810,7 @@
       </div>
 
       <div class="hirebtn">
-        <a href="#" class="hire-link">Hire me</a>
+        <a href="#hireme" class="hire-link">Hire me</a>
       </div>
 
       <nav class="navbar">
