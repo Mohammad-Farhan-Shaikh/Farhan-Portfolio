@@ -57,6 +57,10 @@
         font-weight: 450;
       }
 
+      #logo .short {
+        display: none;
+      }
+
       .navbar ul {
         display: flex;
         gap: 30px;
@@ -89,6 +93,14 @@
         background-color: rgb(255, 255, 255);
       }
 
+      .navbar .hamburger {
+        display: none;
+      }
+
+      .hirebtn{
+        display: none;
+      }
+
       main {
         width: 100%;
         height: auto;
@@ -96,7 +108,6 @@
 
       section.hero {
         width: 100%;
-        background-color: lightgrey;
         padding: 60px 0;
         display: flex;
         justify-content: center;
@@ -155,7 +166,6 @@
         align-items: center;
         gap: 30px;
         margin-top: 25px;
-        flex-wrap: wrap;
       }
 
       .social-links p {
@@ -172,6 +182,10 @@
         padding: 3px 20px;
         border-radius: 4px;
         transition: background-color 0.3s ease;
+      }
+
+      .social-links i{
+        display: none;
       }
 
       .social-links a:hover {
@@ -339,7 +353,7 @@
         .skill-category
         .skills-grid
         .skill-card:hover {
-        background-color: #ececec; 
+        background-color: #ececec;
         transform: scale(1.05);
       }
 
@@ -353,22 +367,393 @@
         font-family: "Clash Display", sans-serif;
         text-align: center;
       }
+
+      .contact-section {
+        width: 100%;
+        /* background-color: #f7f7f7; */
+        padding: 60px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .contact-container {
+        width: 80%;
+        /* max-width: 900px; */
+        font-family: "Poppins", sans-serif;
+        color: #222;
+      }
+
+      .contact-container h2 {
+        font-size: 2.5rem;
+        font-family: "Clash Display", sans-serif;
+        margin-bottom: 10px;
+        color: #111;
+      }
+
+      .contact-container p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        color: #444;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-form .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 14px 10px;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s;
+        background-color: #f7f7f7;
+        margin: 0 80px 0 0;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #333;
+      }
+
+      .contact-btn {
+        align-self: flex-start;
+        padding: 12px 28px;
+        background-color: black;
+        color: white;
+        font-family: "Clash Display", sans-serif;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .contact-btn:hover {
+        background-color: #222;
+        transform: scale(1.05);
+      }
+
+      .contact-btn i {
+        margin-left: 10px;
+      }
+
+      #scrollTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #444;
+        color: white;
+        cursor: pointer;
+        padding: 12px 16px;
+        border-radius: 25%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      #scrollTopBtn:hover {
+        background-color: #333;
+        transform: scale(1.1);
+      }
+
+      .site-footer {
+        background-color: #111;
+        color: #ddd;
+        padding: 40px 0 20px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .footer-container {
+        width: 80%;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footer-left h3 {
+        font-family: "Clash Display", sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 550;
+        color: #fff;
+      }
+
+      .footer-left p {
+        font-size: 0.95rem;
+        color: #aaa;
+      }
+
+      .footer-right a {
+        margin-left: 20px;
+        font-size: 1.3rem;
+        color: #ddd;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+      .footer-right a:hover {
+        color: #fff;
+        transform: scale(1.2);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 0.9rem;
+        color: #888;
+        border-top: 1px solid #333;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        html,
+        body {
+          width: 100%;
+          height: auto;
+          box-sizing: border-box;
+        }
+
+        .header {
+          width: 100%;
+          height: 90px;
+        }
+
+        .header #logo a {
+          display: none;
+        }
+
+        .header #logo .short {
+          display: inline;
+          font-size: 2.3rem;
+          font-family: "Clash display", serif;
+          font-weight: 500;
+          letter-spacing: 1.5px;
+        }
+
+        .navbar {
+          position: relative;
+        }
+
+        .navbar ul {
+          position: absolute;
+          width: 220px;
+          height: auto;
+          border-radius: 8px;
+          padding: 20px;
+          background-color: rgba(17, 17, 17, 0.95);
+          display: block;
+          top: 70px;
+          right: -45px;
+          text-align: center;
+          z-index: 100;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+
+        .navbar ul li .hire-link {
+          display: none;
+        }
+
+        #nav-list {
+          display: none;
+        }
+
+        .navbar ul#nav-list.active {
+          display: block;
+          animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .navbar ul li {
+          margin: 15px;
+        }
+
+        .navbar ul li a {
+          font-size: 1.2rem;
+        }
+
+        .navbar .hamburger {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          gap: 40px;
+          color: white;
+        }
+
+        .navbar .hamburger i {
+          font-size: 1.5rem;
+        }
+
+        #close-hamberg {
+          display: none;
+        }
+
+        .header .hirebtn {
+          border: 1px solid antiquewhite;
+          padding: 9px 10px;
+          border-radius: 5px;
+          display: block;
+          cursor: pointer;
+          font-family: "clash display", serif;
+          font-size: 1.2rem;
+          font-weight: 450;
+          text-decoration: none;
+          color: antiquewhite;
+          letter-spacing: 1px;
+          outline: none;
+        }
+
+        .header .hirebtn .hire-link {
+          text-decoration: none;
+          color: antiquewhite;
+        }
+
+        .header .hirebtn .hire-link:hover {
+          color: #2b2b2b;
+        }
+
+        .header .hirebtn:hover {
+          background: linear-gradient(145deg, #fff4d1, antiquewhite);
+          color: #2b2b2b;
+          border-color: #cbb891;
+          transform: scale(1.07);
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 20px rgba(255, 248, 220, 0.3);
+        }
+
+        main {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-section {
+        text-align: left;
+        width: 80%;
+        max-width: 1000px;
+        padding: 0px 9px;
+      }
+
+      .hero-sec h3{
+        font-size: 1.5rem;
+      }
+
+      .hero-sec h3 span{
+        font-size: 2.2rem;
+        display: block;
+      }
+
+      .hero-sec h4{
+        font-size: 1.3rem;
+        margin-left: 20px;
+      }
+
+      .hero-sec p{
+        font-size: .8rem;
+        margin: 0 20px;
+      }
+
+      .social-links{
+        gap: 3px;
+      }
+
+      .social-links p{
+        font-size: .9rem;
+        margin: 0 20px;
+        
+      }
+
+      .social-links a{
+        display: none;
+      }
+
+      .social-links i{
+        display: block;
+        margin: 10px;
+        font-size: 1.4rem;
+        padding: 5px 8px;
+        border-radius: 4px;
+        color: #1e1e1e;
+        transition: all .3s ease;
+      }
       
+      .social-links i:hover{
+        color: rgb(17, 13, 13);
+        background-color: rgb(255, 255, 255);
+      }
+
+      .hero-contact{
+        /* gap: 6px; */
+        width: 90%;
+        margin-top: 10px;
+      }
+
+      ::placeholder{
+        font-size: .9rem;
+      }
+
+      .hero-contact p{
+        margin: 0 20px;
+        font-size: 1rem;
+      } 
+
+      .hero-contact input{
+        font-size: .9rem;
+      }
+
+      }
     </style>
   </head>
   <body>
     <header class="header">
       <div id="logo">
         <a href="#">Farhan Portfolio</a>
+        <a href="#" class="short">FS</a>
       </div>
+
+      <div class="hirebtn">
+        <a href="#" class="hire-link">Hire me</a>
+      </div>
+
       <nav class="navbar">
-        <ul>
+        <ul id="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#aboutme">About me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#hireme" class="hire-link">Hire me</a></li>
         </ul>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa-solid fa-bars" id="open-hamberg"></i>
+          <i class="fa-solid fa-xmark" id="close-hamberg"></i>
+        </div>
       </nav>
     </header>
 
@@ -390,14 +775,17 @@
 
           <div class="social-links">
             <p>Know me :</p>
+            <i class="fa-brands fa-linkedin"></i>
             <a href="https://www.linkedin.com/in/your-username" target="_blank"
               >LinkedIn</a
             >
             |
+            <i class="fa-brands fa-square-github"></i>
             <a href="https://github.com/your-username" target="_blank"
               >GitHub</a
             >
             |
+            <i class="fa-brands fa-youtube"></i>
             <a href="https://www.youtube.com/@your-channel" target="_blank"
               >YouTube</a
             >
@@ -581,6 +969,134 @@
           </div>
         </div>
       </section>
+      <!-- Contact Section -->
+      <section id="hireme" class="contact-section">
+        <div class="contact-container">
+          <h2>Contact Me</h2>
+          <p>
+            If you have any questions, opportunities, or just want to say hello
+            — feel free to reach out!
+          </p>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="contact-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>Farhan Portfolio</h3>
+          <p>Crafted by Mohammad Farhan Shaikh</p>
+        </div>
+
+        <div class="footer-right">
+          <a href="https://www.linkedin.com/in/your-username" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/your-username" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.youtube.com/@your-channel" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="mailto:hireme@gmail.com"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Farhan. All rights reserved.</p>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <button id="scrollTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </footer>
+    <script>
+      // Show button when user scrolls down
+      window.onscroll = function () {
+        const btn = document.getElementById("scrollTopBtn");
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
+
+      // Scroll to top when clicked
+      document
+        .getElementById("scrollTopBtn")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+      //hamberg functionality
+      let nav = document.getElementById("nav-list");
+      let navOpen = document.getElementById("open-hamberg");
+      let navClose = document.getElementById("close-hamberg");
+
+      function toggleNav() {
+        nav.classList.toggle("active");
+
+        if (nav.classList.contains("active")) {
+          navOpen.style.display = "none";
+          navClose.style.display = "block";
+        } else {
+          navOpen.style.display = "block";
+          navClose.style.display = "none";
+        }
+      }
+
+      navOpen.addEventListener("click", toggleNav);
+      navClose.addEventListener("click", toggleNav);
+
+      document.querySelectorAll("#nav-list a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          navOpen.style.display = "block";
+          navClose.style.display = "none";
+        });
+      });
+    </script>
   </body>
 </html>
