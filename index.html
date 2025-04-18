@@ -12,13 +12,11 @@
       href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=sentient@300,400,500&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
@@ -75,22 +73,24 @@
         font-size: 18px;
         text-decoration: none;
         color: antiquewhite;
-        transition: 0.3s all;
+        transition: all 0.3s ease;
       }
 
       .navbar ul li a:hover {
         color: darkgrey;
+        transform: translateY(-2px);
       }
 
       .navbar ul li .hire-link {
         padding: 3px 20px;
         border-radius: 4px;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
       }
 
       .navbar ul li .hire-link:hover {
         color: rgb(17, 13, 13);
         background-color: rgb(255, 255, 255);
+        transform: translateY(-2px);
       }
 
       .navbar .hamburger {
@@ -133,16 +133,17 @@
       .hero-sec h3 span {
         font-size: 2.8rem;
         font-weight: 550;
-        padding: 3px 20px;
+        padding: 3px 15px;
         border-radius: 5px;
         font-family: "Clash Display", sans-serif;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
       }
 
       .hero-sec h3 span:hover {
         cursor: pointer;
         color: rgb(17, 13, 13);
         background-color: rgb(255, 255, 255);
+        transform: scale(1.02);
       }
 
       .hero-sec h4 {
@@ -150,6 +151,40 @@
         font-family: "Sentient", serif;
         font-weight: 500;
         margin: 10px 0;
+      }
+
+      .profession {
+        position: relative; /* Needed for absolute positioning of cursor */
+        display: inline-block; /* Ensure it only takes necessary width */
+        min-height: 1.8rem; /* Prevent layout shift when empty */
+        font-size: 1.6rem;
+        font-family: "Sentient", serif; /* Added for clarity */
+        font-weight: 500; /* Added for clarity */
+        margin: 10px 0; /* Added for clarity */
+        color: #333; /* Match cursor color or your desired text color */
+        vertical-align: top; /* Helps align the cursor nicely if needed */
+      }
+
+      .profession::after {
+        content: "|";
+        position: absolute;
+        right: -8px; /* Adjust position as needed */
+        top: 0;
+        display: inline-block;
+        animation: blink 0.7s infinite;
+        color: #333; /* Cursor color */
+        font-weight: bold; /* Make cursor more visible */
+      }
+
+      /* Blinking animation */
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
       }
 
       .hero-sec p {
@@ -181,7 +216,7 @@
         font-size: 1rem;
         padding: 3px 20px;
         border-radius: 4px;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
       }
 
       .social-links i {
@@ -192,6 +227,7 @@
         cursor: pointer;
         color: rgb(17, 13, 13);
         background-color: rgb(255, 255, 255);
+        transform: translateY(-2px);
       }
 
       .hero-contact {
@@ -225,11 +261,14 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.452);
         background-color: white;
         color: #333;
+        transition: all 0.3s ease;
       }
 
       .input-wrapper input:focus {
         border: 2px solid #a9aaaa;
         outline: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
 
       .input-wrapper button {
@@ -244,7 +283,7 @@
         border: none;
         border-radius: 50%;
         cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: all 0.3s ease;
       }
 
       .input-wrapper button:hover {
@@ -256,6 +295,7 @@
         font-size: 16px;
       }
 
+      /* --- About Section --- */
       .about-section {
         width: 100%;
         padding: 10px 0;
@@ -268,64 +308,105 @@
         padding: 0 26px 35px;
         font-family: "Poppins", sans-serif;
         color: #222;
+        text-align: right; /* --- Correction: Set text-align on parent --- */
       }
 
       .about-container h2 {
+        position: relative;
+        display: inline-block; /* --- Correction: Make h2 fit content --- */
+        padding-bottom: 8px;
         font-size: 2.5rem;
-        text-align: right;
+        /* text-align: right; --- Removed: Alignment controlled by parent --- */
         font-family: "Clash Display", sans-serif;
         margin: 30px 0 30px;
         color: #111;
+      }
+
+      .about-container h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0; /* Start from the right */
+        width: 0; /* Start with zero width */
+        height: 3px;
+        background-color: #222;
+        transition: width 0.35s ease-in-out;
+      }
+
+      .about-container h2:hover::after {
+        width: 100%; /* --- Correction: Expand to 100% of inline-block width --- */
+        /* right: 0;  --- Not needed, already set --- */
+        /* left: auto; --- Not needed --- */
       }
 
       .about-container p {
         font-size: 1rem;
         line-height: 1.8;
         margin-bottom: 20px;
-        text-align: justify;
+        text-align: justify; /* Keep paragraphs justified */
       }
 
+      /* --- Skills Section --- */
       .skills-section {
         width: 100%;
         height: auto;
         padding: 15px 0;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; /* Can keep center for vertical alignment if needed */
       }
 
       .skills-section .container {
         width: 80%;
         display: flex;
-        justify-content: center;
-        align-items: left;
+        /* justify-content: center; --- Removed: Default left alignment is fine */
+        align-items: flex-start; /* --- Correction: Use flex-start for left alignment */
         flex-direction: column;
+        text-align: left; /* Sets default text align for children, good for the h2 */
       }
 
       .skills-section .container .section-title {
-        text-align: left;
-        margin: 20px;
+        margin: 20px 0; /* Adjusted margin for better spacing */
         font-size: 2.5rem;
         font-family: "clash display", serif;
         letter-spacing: 1px;
         color: #111;
+        position: relative;
+        display: inline-block; /* Correct: Makes the underline only span the text width */
+        padding-bottom: 8px;
+      }
+
+      .skills-section .container .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0; /* Start from the left edge */
+        width: 0; /* Start with zero width */
+        height: 3px;
+        background-color: #222;
+        transition: width 0.35s ease-in-out;
+      }
+
+      .skills-section .container .section-title:hover::after {
+        width: 100%; /* Correct: Expand to the full width of the inline-block element */
       }
 
       .skills-section .container .skill-category {
         display: flex;
-        align-items: center;
+        align-items: center; /* Align items vertically in the center */
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: flex-start; /* Keep items aligned left */
         padding: 10px 0;
         gap: 40px;
+        width: 100%; /* Ensure category takes full width */
       }
 
       .skills-section .container .skill-category h3 {
         font-size: 1.2rem;
         font-family: "Clash Display", sans-serif;
-        min-width: 220px; /* 👈 Category fixed width */
+        min-width: 220px; /* Keep min-width if desired */
         margin: 0;
-        padding-top: 10px;
+        /* padding-top: 10px; --- Vertically centered by align-items now --- */
         font-weight: 500;
         color: #222;
       }
@@ -334,6 +415,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+        flex-grow: 1; /* Allow grid to take remaining space */
       }
 
       .skills-section .container .skill-category .skills-grid .skill-card {
@@ -342,9 +424,9 @@
         align-items: center;
         justify-content: center;
         gap: 4px;
-        padding: 12px 16px; /* 👈 uniform padding */
+        padding: 12px 16px;
         border-radius: 6px;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         min-width: 80px;
       }
 
@@ -354,12 +436,23 @@
         .skills-grid
         .skill-card:hover {
         background-color: #ececec;
-        transform: scale(1.05);
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .skills-section .container .skill-category .skills-grid .skill-card i {
         font-size: 3.5rem;
         color: #333;
+        transition: all 0.3s ease;
+      }
+
+      .skills-section
+        .container
+        .skill-category
+        .skills-grid
+        .skill-card:hover
+        i {
+        transform: scale(1.1);
       }
 
       .skills-section .container .skill-category .skills-grid .skill-card span {
@@ -368,9 +461,173 @@
         text-align: center;
       }
 
+      /* --- Updated Projects Section CSS --- */
+      .projects-section {
+        width: 100%;
+        padding: 60px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .projects-container {
+        width: 85%;
+        max-width: 1200px;
+        font-family: "Poppins", sans-serif;
+        margin: 0 auto;
+        text-align: right; /* --- Correction: Set text-align on parent --- */
+      }
+
+      .projects-container h2 {
+        font-size: 2.5rem;
+        font-family: "Clash Display", sans-serif;
+        margin-bottom: 40px;
+        color: #111;
+        padding-right: 0px; /* --- Adjusted: No extra padding needed --- */
+        position: relative;
+        display: inline-block; /* --- Correction: Make h2 fit content --- */
+        padding-bottom: 8px;
+        /* text-align: right; --- Removed: Controlled by parent --- */
+      }
+
+      .projects-container h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0; /* Start from the right */
+        width: 0;
+        height: 3px;
+        background-color: #222;
+        transition: width 0.35s ease-in-out;
+      }
+
+      .projects-container h2:hover::after {
+        width: 100%; /* --- Correction: Expand fully under text --- */
+        /* right: 0; --- Not needed --- */
+        /* left: auto; --- Not needed --- */
+      }
+
+      .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center cards horizontally */
+        gap: 30px;
+        width: 100%;
+      }
+
+      .project-card {
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        width: calc(50% - 30px);
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-image {
+        height: 220px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.05);
+      }
+
+      .project-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        text-align: left; /* Content inside card is left aligned */
+      }
+
+      .project-content h3 {
+        font-family: "Clash Display", sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      .project-content p {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 15px;
+        flex-grow: 1;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .project-tech span {
+        font-family: "Clash Display", sans-serif;
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        color: #333;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 15px;
+        margin-top: auto;
+      }
+
+      .project-links a {
+        font-family: "Clash Display", sans-serif;
+        font-size: 0.85rem;
+        text-decoration: none;
+        padding: 7px 14px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .demo-link {
+        background-color: #1e1e1e;
+        color: white;
+      }
+      .demo-link:hover {
+        background-color: #333;
+      }
+
+      .code-link {
+        border: 1px solid #1e1e1e;
+        color: #1e1e1e;
+      }
+      .code-link:hover {
+        background-color: #f0f0f0;
+      }
+      /* --- End of Updated Projects Section CSS --- */
+
+      /* --- Contact Section --- */
       .contact-section {
         width: 100%;
-        /* background-color: #f7f7f7; */
         padding: 60px 0;
         display: flex;
         justify-content: center;
@@ -378,9 +635,9 @@
 
       .contact-container {
         width: 80%;
-        /* max-width: 900px; */
         font-family: "Poppins", sans-serif;
         color: #222;
+        text-align: left; /* --- Correction: Set text-align on parent --- */
       }
 
       .contact-container h2 {
@@ -388,12 +645,32 @@
         font-family: "Clash Display", sans-serif;
         margin-bottom: 10px;
         color: #111;
+        /* text-align: left; --- Removed: Controlled by parent --- */
+        position: relative;
+        display: inline-block; /* --- Correction: Make h2 fit content --- */
+        padding-bottom: 8px;
+      }
+
+      .contact-container h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0; /* Start from left */
+        width: 0;
+        height: 3px;
+        background-color: #222;
+        transition: width 0.35s ease-in-out;
+      }
+
+      .contact-container h2:hover::after {
+        width: 100%; /* Correct: Expand fully */
       }
 
       .contact-container p {
         font-size: 1rem;
         margin-bottom: 30px;
         color: #444;
+        /* text-align: left; --- Inherited from parent --- */
       }
 
       .contact-form {
@@ -414,15 +691,21 @@
         font-family: "Poppins", sans-serif;
         border: 1px solid #ccc;
         border-radius: 6px;
-        transition: border-color 0.3s;
+        transition: all 0.3s;
         background-color: #f7f7f7;
-        margin: 0 80px 0 0;
+        /* margin: 0 80px 0 0; --- Removed: Let flexbox handle spacing or use width: 100% --- */
+        width: calc(
+          100% - 80px
+        ); /* --- Alternative: Keep right margin effect --- */
+        /* Or width: 100%; if you want them full width */
       }
 
       .contact-form input:focus,
       .contact-form textarea:focus {
         outline: none;
         border-color: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .contact-btn {
@@ -435,20 +718,31 @@
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: all 0.3s ease;
       }
 
       .contact-btn:hover {
         background-color: #222;
-        transform: scale(1.05);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-btn:active {
+        transform: scale(0.98);
       }
 
       .contact-btn i {
         margin-left: 10px;
+        transition: all 0.3s ease;
       }
 
+      .contact-btn:hover i {
+        transform: translateX(3px);
+      }
+
+      /* --- Footer and Scroll Top --- */
       #scrollTopBtn {
-        display: none; /* Hidden by default */
+        display: none;
         position: fixed;
         bottom: 30px;
         right: 30px;
@@ -467,7 +761,7 @@
 
       #scrollTopBtn:hover {
         background-color: #333;
-        transform: scale(1.1);
+        transform: scale(1.1) translateY(-3px);
       }
 
       .site-footer {
@@ -504,12 +798,12 @@
         margin-left: 20px;
         font-size: 1.3rem;
         color: #ddd;
-        transition: color 0.3s ease, transform 0.2s ease;
+        transition: all 0.3s ease;
       }
 
       .footer-right a:hover {
         color: #fff;
-        transform: scale(1.2);
+        transform: scale(1.2) translateY(-3px);
       }
 
       .footer-bottom {
@@ -521,35 +815,51 @@
         margin-top: 20px;
       }
 
+      /* --- Responsive Styles --- */
       @media screen and (max-width: 768px) {
+        /* --- General Mobile --- */
         html,
         body {
           width: 100%;
           height: auto;
           box-sizing: border-box;
         }
-
-        .header {
-          width: 100%;
+        header {
           height: 90px;
-        }
-
-        .header #logo a {
+          padding: 0 20px; /* Reduced padding */
+        } /* Adjusted padding */
+        #logo a {
           display: none;
         }
-
-        .header #logo .short {
+        #logo .short {
           display: inline;
           font-size: 2.3rem;
           font-family: "Clash display", serif;
           font-weight: 500;
           letter-spacing: 1.5px;
+          position: relative;
+          cursor: pointer;
         }
-
+        .cursor-following-tooltip {
+          position: fixed;
+          background-color: rgba(40, 40, 40, 0.95);
+          color: #fff;
+          padding: 6px 12px;
+          border-radius: 5px;
+          font-size: 0.85rem;
+          font-family: "Poppins", sans-serif;
+          white-space: nowrap;
+          z-index: 9999;
+          pointer-events: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+          left: 0;
+          top: 0;
+        }
         .navbar {
           position: relative;
         }
-
         .navbar ul {
           position: absolute;
           width: 220px;
@@ -559,27 +869,23 @@
           background-color: rgba(17, 17, 17, 0.95);
           display: block;
           top: 70px;
-          right: -45px;
+          right: -20px;
           text-align: center;
           z-index: 100;
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
           backdrop-filter: blur(10px);
           transition: all 0.3s ease;
         }
-
         .navbar ul li .hire-link {
           display: none;
         }
-
         #nav-list {
           display: none;
         }
-
         .navbar ul#nav-list.active {
           display: block;
           animation: fadeIn 0.3s ease-in-out;
         }
-
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -590,36 +896,34 @@
             transform: translateY(0);
           }
         }
-
         .navbar ul li {
           margin: 15px;
         }
-
         .navbar ul li a {
           font-size: 1.2rem;
         }
-
         .navbar .hamburger {
           display: flex;
           align-items: center;
           padding: 5px;
-          gap: 40px;
+          gap: 20px;
           color: white;
         }
-
         .navbar .hamburger i {
           font-size: 1.5rem;
+          transition: all 0.3s ease;
         }
-
+        .navbar .hamburger i:hover {
+          transform: scale(1.1);
+        }
         #close-hamberg {
           display: none;
         }
-
-        .header .hirebtn {
+        .hirebtn {
+          display: inline-block;
           border: 1px solid antiquewhite;
           padding: 10px 20px;
           border-radius: 8px;
-          display: inline-block;
           cursor: pointer;
           font-family: "Clash Display", serif;
           font-size: 1.1rem;
@@ -631,174 +935,322 @@
           transition: all 0.3s ease;
           box-shadow: 0 2px 10px rgba(255, 248, 220, 0.1);
         }
-
-        .header .hirebtn:hover {
+        .hirebtn:hover {
           background: linear-gradient(145deg, #fff4d1, antiquewhite);
           color: #2b2b2b;
           border-color: #cbb891;
-          transform: scale(1.07);
+          transform: scale(1.07) translateY(-2px);
           box-shadow: 0 6px 20px rgba(255, 248, 220, 0.4);
         }
-
-        /* Remove all styling from the <a> inside */
-        .header .hirebtn a {
+        .hirebtn:active {
+          transform: scale(0.98);
+        }
+        .hirebtn a {
           text-decoration: none;
           color: inherit;
           display: block;
           width: 100%;
           height: 100%;
         }
-
-
         main {
           width: 100%;
           height: auto;
+          padding: 0 15px;
         }
 
+        /* --- Hero Mobile --- */
         .hero-section {
-          text-align: left;
-          width: 80%;
-          max-width: 1000px;
-          padding: 0px 9px;
+          width: 90%;
+          padding: 0 5px;
         }
-
         .hero-sec h3 {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
+          margin-bottom: 15px;
         }
-
         .hero-sec h3 span {
-          font-size: 2.2rem;
-          display: block;
+          font-size: 2rem;
+          padding: 5px 15px;
+          margin-top: 10px;
+          display: inline-block;
         }
-
-        .hero-sec h4 {
-          font-size: 1.3rem;
-          margin-left: 20px;
+        .hero-sec h4,
+        .profession {
+          font-size: 1.4rem !important;
+          margin: 10px 0;
+          display: inline-block;
+          min-height: 1.6rem; /* Match font-size line-height */
         }
-
         .hero-sec p {
-          font-size: 0.8rem;
-          margin: 0 20px;
+          font-size: 0.95rem;
+          margin: 0 0 20px;
+          line-height: 1.6;
         }
-
         .social-links {
-          gap: 3px;
+          flex-wrap: wrap;
+          gap: 15px;
+          margin: 20px 0;
         }
-
         .social-links p {
-          font-size: 0.9rem;
-          margin: 0 20px;
+          font-size: 1rem;
+          margin: 0;
         }
-
         .social-links a {
           display: none;
         }
-
         .social-links i {
-          display: block;
-          margin: 10px;
-          font-size: 1.4rem;
-          padding: 5px 8px;
+          display: inline-block; /* Use inline-block */
+          font-size: 1.6rem;
+          padding: 8px;
           border-radius: 4px;
           color: #1e1e1e;
           transition: all 0.3s ease;
+          vertical-align: middle; /* Align with text */
         }
-
         .social-links i:hover {
           color: rgb(17, 13, 13);
           background-color: rgb(255, 255, 255);
+          transform: translateY(-3px);
         }
+        .social-links span {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 5px;
+        } /* For the '|' separators */
 
         .hero-contact {
-          /* gap: 6px; */
-          width: 90%;
-          margin-top: 10px;
+          align-items: flex-start;
+          flex-direction: column; /* Stack on mobile */
+          gap: 15px;
+          margin: 20px 0;
+          width: 100%; /* Take full width */
         }
-
-        ::placeholder {
-          font-size: 0.9rem;
-        }
-
         .hero-contact p {
-          margin: 2px 0 0 20px;
+          margin: 0 0 5px 0; /* Space below text */
+          font-size: 1.1rem;
+          white-space: normal;
+        }
+        .input-wrapper {
+          width: 100%;
+        }
+        .input-wrapper input {
           font-size: 1rem;
-          white-space: nowrap;
+        }
+        ::placeholder {
+          font-size: 0.95rem;
         }
 
-        .hero-contact input {
-          font-size: 0.9rem;
+        /* --- About Mobile --- */
+        .about-section {
+          padding: 20px 0;
         }
-
-        .about-section .about-container h2 {
+        .about-container {
+          width: 90%;
+          padding: 0 5px 30px;
+          text-align: right; /* Keep alignment */
+        }
+        .about-container h2 {
           font-size: 2rem;
-          margin-bottom: 10px;
+          margin: 20px 0; /* Keep inline-block from desktop */
+        }
+        .about-container p {
+          font-size: 0.9rem; /* Increased slightly */
+          margin: 12px 0;
+          line-height: 1.7;
         }
 
-        .about-section .about-container p {
-          font-size: 0.8rem;
-          margin: 8px 0;
-          line-height: 18px;
+        /* --- Skills Mobile --- */
+        .skills-section {
+          padding: 20px 0;
         }
-
+        .skills-section .container {
+          width: 90%;
+          align-items: flex-start; /* Keep left align */
+        }
         .skills-section .container .section-title {
           font-size: 2rem;
+          margin: 20px 0; /* Keep inline-block */
+          text-align: left; /* Ensure parent text-align works */
         }
-
         .skills-section .container .skill-category {
           flex-direction: column;
-          gap: 14px;
+          gap: 15px; /* Reduced gap */
+          padding: 15px 0;
+          align-items: flex-start;
         }
-
         .skills-section .container .skill-category h3 {
-          margin: 0 64px 0 0;
+          min-width: 100%;
+          text-align: left;
+          margin: 0 0 5px 0; /* Add bottom margin */
+          padding: 0;
+          font-size: 1.1rem;
         }
-
-        .contact-form{
-          gap: 12px;
+        .skills-section .container .skill-category .skills-grid {
+          justify-content: flex-start;
+          width: 100%;
         }
+        .skills-section .container .skill-category .skills-grid .skill-card {
+          min-width: 70px;
+          padding: 10px 12px;
+        } /* Slightly smaller */
+        .skills-section .container .skill-category .skills-grid .skill-card i {
+          font-size: 3rem;
+        } /* Slightly smaller */
+        .skills-section
+          .container
+          .skill-category
+          .skills-grid
+          .skill-card
+          span {
+          font-size: 0.8rem;
+        } /* Slightly smaller */
 
-        .contact-section .contact-container h2 {
+        /* --- Projects Mobile Adjustments --- */
+        .projects-container {
+          width: 90%;
+          text-align: right; /* Keep alignment */
+        }
+        .projects-container h2 {
           font-size: 2rem;
-          margin-top: -42px;
+          margin-bottom: 30px;
+          padding-right: 0; /* Keep inline-block */
         }
-
-        .contact-section .contact-container p {
-          font-size: 1rem;
+        .projects-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 25px;
         }
-
-        .contact-section .contact-container p {
+        .project-card {
+          width: 95%; /* Wider card */
+          max-width: 450px;
+        }
+        .project-image {
+          height: 200px;
+        }
+        .project-content {
+          padding: 18px;
+        }
+        .project-content h3 {
+          font-size: 1.2rem;
+        }
+        .project-content p {
           font-size: 0.9rem;
-          margin: 0 26px 20px 4px;
         }
 
+        /* --- Contact Mobile --- */
+        .contact-section {
+          padding: 40px 0;
+        }
+        .contact-container {
+          width: 90%;
+          text-align: left; /* Keep alignment */
+        }
+        .contact-container h2 {
+          font-size: 2rem;
+          margin-top: 0; /* Keep inline-block */
+        }
+        .contact-container p {
+          font-size: 0.95rem;
+          margin: 0 0 20px;
+          text-align: left;
+        }
+        .contact-form {
+          gap: 15px;
+        }
         .contact-form input,
         .contact-form textarea {
-          margin: 0 35px 0 0;
+          margin: 0;
+          width: 100%; /* Full width */
+        }
+        .contact-btn {
+          width: 60%; /* Wider button */
+          text-align: center;
+          padding: 12px;
+          align-self: center;
+        }
+
+        /* --- Footer Mobile --- */
+        .footer-container {
+          width: 90%;
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+        .footer-left h3 {
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+        }
+        .footer-left p {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+        .footer-right {
+          margin-top: 10px;
+        }
+        .footer-right a {
+          margin: 0 10px;
+          font-size: 1.5rem;
+        }
+      }
+
+      /* --- Smaller Mobile Adjustments --- */
+      @media screen and (max-width: 480px) {
+        header {
+          padding: 15px;
+        }
+        #logo .short {
+          font-size: 2rem;
+        }
+        .navbar ul {
+          width: 200px;
+          right: -15px;
+        }
+        .hero-sec h3 {
+          font-size: 1.6rem;
+        }
+        .hero-sec h3 span {
+          font-size: 1.8rem;
+        }
+        .hero-sec h4,
+        .profession {
+          font-size: 1.2rem !important;
+          min-height: 1.4rem;
+        } /* Adjust heading 4 */
+
+        .about-container h2,
+        .skills-section .container .section-title,
+        .projects-container h2,
+        .contact-container h2 {
+          font-size: 1.8rem; /* Shared smaller heading size */
+        }
+
+        .projects-container h2 {
+          padding-right: 0;
+        }
+        .project-card {
+          width: 95%;
+        }
+        .project-image {
+          height: 180px;
+        }
+        .project-content {
+          padding: 15px;
+        }
+        .project-links {
+          flex-direction: column;
+          gap: 10px;
+          align-items: stretch;
+        }
+        .project-links a {
+          justify-content: center;
+          padding: 10px 15px;
         }
 
         .contact-btn {
-          padding: 10px 15px;
-          font-size: 0.9rem;
-          letter-spacing: 0.2px;
-        }
-
-        .contact-btn i {
-          font-size: 0.7rem;
-        }
-
-        .footer-left h3 {
-          font-family: "Clash Display", sans-serif;
-          font-size: 1.2rem;
-          margin-bottom: 3px;
-          font-weight: 450;
-          color: #fff;
-        }
-
-        .footer-left p {
-          font-size: 0.75rem;
-          color: #aaa;
-          margin-bottom: 10px;
-        }
+          width: 70%;
+        } /* Wider button */
+        .footer-right a {
+          font-size: 1.4rem;
+        } /* Slightly smaller footer icons */
       }
     </style>
   </head>
@@ -835,7 +1287,7 @@
         <div class="hero-section">
           <div class="hero-sec">
             <h3>I'm <span>Mohammad Farhan Shaikh</span></h3>
-            <h4>Software Developer</h4>
+            <h4 class="profession" id="typewriter-profession"></h4>
             <p>
               "Hi, I'm a passionate software developer who loves exploring new
               technologies and constantly pushing my limits. Whether it's
@@ -847,20 +1299,20 @@
 
           <div class="social-links">
             <p>Know me :</p>
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/your-username" target="_blank"
-              >LinkedIn</a
+            <a href="https://www.linkedin.com/in/mohammad-farhan-shaikh70" target="_blank"
+              >Linked in</a
             >
+            <i class="fa-brands fa-linkedin" title="LinkedIn"></i>
             |
-            <i class="fa-brands fa-square-github"></i>
-            <a href="https://github.com/your-username" target="_blank"
-              >GitHub</a
+            <a href="https://github.com/Mohammad-Farhan-Shaikh" target="_blank"
+              >Git hub</a
             >
+            <i class="fa-brands fa-square-github" title="Github"></i>
             |
-            <i class="fa-brands fa-youtube"></i>
-            <a href="https://www.youtube.com/@your-channel" target="_blank"
-              >YouTube</a
+            <a href="https://www.youtube.com/" target="_blank"
+              >Youtube</a
             >
+            <i class="fa-brands fa-youtube" title="Youtube"></i>
           </div>
 
           <div class="hero-contact">
@@ -915,6 +1367,7 @@
         </div>
       </section>
 
+      <!-- Skills Section -->
       <section id="skills" class="skills-section">
         <div class="container">
           <h2 class="section-title">Skills</h2>
@@ -924,58 +1377,46 @@
             <h3>Web Development</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="fa-brands fa-html5"></i>
-                <span>HTML5</span>
+                <i class="fa-brands fa-html5"></i> <span>HTML5</span>
               </div>
               <div class="skill-card">
-                <i class="fa-brands fa-css3-alt"></i>
-                <span>CSS3</span>
+                <i class="fa-brands fa-css3-alt"></i> <span>CSS3</span>
               </div>
               <div class="skill-card">
-                <i class="fa-brands fa-js"></i>
-                <span>JavaScript</span>
+                <i class="fa-brands fa-js"></i> <span>JavaScript</span>
               </div>
               <div class="skill-card">
-                <i class="fa-brands fa-bootstrap"></i>
-                <span>Bootstrap</span>
+                <i class="fa-brands fa-bootstrap"></i> <span>Bootstrap</span>
               </div>
               <div class="skill-card">
-                <i class="fa-brands fa-php"></i>
-                <span>PHP</span>
+                <i class="fa-brands fa-php"></i> <span>PHP</span>
               </div>
             </div>
           </div>
-
           <!-- Programming Languages -->
           <div class="skill-category">
             <h3>Programming Languages</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="devicon-c-line-wordmark colored"></i>
-                <span>C</span>
+                <i class="devicon-c-line-wordmark colored"></i> <span>C</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-cplusplus-plain colored"></i>
-                <span>C++</span>
+                <i class="devicon-cplusplus-plain colored"></i> <span>C++</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-java-plain"></i>
-                <span>Java</span>
+                <i class="devicon-java-plain"></i> <span>Java</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-python-plain"></i>
-                <span>Python</span>
+                <i class="devicon-python-plain"></i> <span>Python</span>
               </div>
             </div>
           </div>
-
           <!-- DB Management -->
           <div class="skill-category">
             <h3>Database</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="devicon-mysql-plain-wordmark"></i>
-                <span>MySQL</span>
+                <i class="devicon-mysql-plain-wordmark"></i> <span>MySQL</span>
               </div>
               <div class="skill-card">
                 <i class="devicon-mongodb-plain-wordmark"></i>
@@ -983,33 +1424,27 @@
               </div>
             </div>
           </div>
-
           <!-- Operating System -->
           <div class="skill-category">
             <h3>Operating System</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="devicon-windows8-original"></i>
-                <span>Windows</span>
+                <i class="devicon-windows8-original"></i> <span>Windows</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-linux-plain"></i>
-                <span>Linux</span>
+                <i class="devicon-linux-plain"></i> <span>Linux</span>
               </div>
             </div>
           </div>
-
           <!-- API Testing -->
           <div class="skill-category">
             <h3>API Testing</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="devicon-postman-plain"></i>
-                <span>Postman</span>
+                <i class="devicon-postman-plain"></i> <span>Postman</span>
               </div>
             </div>
           </div>
-
           <!-- Version Control -->
           <div class="skill-category">
             <h3>Version Control</h3>
@@ -1019,28 +1454,94 @@
                 <span>GitHub</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-git-plain-wordmark"></i>
-                <span>Git</span>
+                <i class="devicon-git-plain-wordmark"></i> <span>Git</span>
               </div>
             </div>
           </div>
-
           <!-- Development Tools -->
           <div class="skill-category">
             <h3>Development Tools</h3>
             <div class="skills-grid">
               <div class="skill-card">
-                <i class="devicon-vscode-plain"></i>
-                <span>VS Code</span>
+                <i class="devicon-vscode-plain"></i> <span>VS Code</span>
               </div>
               <div class="skill-card">
-                <i class="devicon-intellij-plain"></i>
-                <span>IntelliJ</span>
+                <i class="devicon-intellij-plain"></i> <span>IntelliJ</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="projects-container">
+          <h2 class="section-title">Projects</h2>
+
+          <div class="projects-grid">
+            <!-- Project 1 - Removed left-card class -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="images/vts-img.avif" alt="Vehicle Tracking System" />
+              </div>
+              <div class="project-content">
+                <h3>Vehicle Tracking System</h3>
+                <p>
+                  A real-time GPS tracking solution that provides live location
+                  updates, route history, and analytics for fleet management.
+                  Built with modern web technologies and mapping APIs.
+                </p>
+                <div class="project-tech">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>MongoDB</span>
+                  <span>Google Maps API</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="demo-link">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <a href="#" target="_blank" class="code-link">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 - Removed right-card class -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="images/cpf-img.avif" alt="Career Path Finder" />
+              </div>
+              <div class="project-content">
+                <h3>Career Path Finder</h3>
+                <p>
+                  An intelligent career guidance platform that assesses user
+                  skills and interests through interactive quizzes and
+                  recommends personalized career paths with learning resources.
+                </p>
+                <div class="project-tech">
+                  <span>Python</span>
+                  <span>Django</span>
+                  <span>PostgreSQL</span>
+                  <span>Machine Learning</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="demo-link">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <a href="#" target="_blank" class="code-link">
+                    <i class="fab fa-github"></i> View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more project-card divs here if needed -->
+          </div>
+        </div>
+      </section>
+
       <!-- Contact Section -->
       <section id="hireme" class="contact-section">
         <div class="contact-container">
@@ -1049,7 +1550,7 @@
             If you have any questions, opportunities, or just want to say hello
             — feel free to reach out!
           </p>
-          <form class="contact-form" action="#" method="post">
+          <form class="contact-form" action="https://formsubmit.co/mohammad70.edu@gmail.com.com" method="post">
             <div class="form-group">
               <input type="text" name="name" placeholder="Full Name" required />
             </div>
@@ -1094,23 +1595,23 @@
         </div>
 
         <div class="footer-right">
-          <a href="https://www.linkedin.com/in/your-username" target="_blank"
+          <a href="https://www.linkedin.com/in/mohammad-farhan-shaikh70" target="_blank"
             ><i class="fab fa-linkedin"></i
           ></a>
-          <a href="https://github.com/your-username" target="_blank"
+          <a href="https://github.com/Mohammad-Farhan-Shaikh" target="_blank"
             ><i class="fab fa-github"></i
           ></a>
-          <a href="https://www.youtube.com/@your-channel" target="_blank"
+          <a href="https://www.youtube.com/" target="_blank"
             ><i class="fab fa-youtube"></i
           ></a>
-          <a href="mailto:hireme@gmail.com"
+          <a href="mailto:mohammad70.edu@gmail.com"
             ><i class="fa-solid fa-envelope"></i
           ></a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Farhan. All rights reserved.</p>
+        <p>© 2025 Farhan. All rights reserved.</p>
       </div>
 
       <!-- Scroll to Top Button -->
@@ -1118,6 +1619,7 @@
         <i class="fas fa-arrow-up"></i>
       </button>
     </footer>
+
     <script>
       // Show button when user scrolls down
       window.onscroll = function () {
@@ -1142,7 +1644,185 @@
           });
         });
 
-      //hamberg functionality
+      const logoShortMobile = document.querySelector("#logo .short");
+      let tooltipDiv = null; // To store the tooltip element
+
+      // Function to create the tooltip div if it doesn't exist
+      function createTooltipElement() {
+        if (!tooltipDiv) {
+          tooltipDiv = document.createElement("div");
+          tooltipDiv.classList.add("cursor-following-tooltip");
+          tooltipDiv.textContent = "Farhan Shaikh";
+          document.body.appendChild(tooltipDiv); // Add it to the body
+        }
+      }
+
+      // Function to check if the mobile logo is currently displayed
+      function isMobileLogoVisible() {
+        // Check if the element exists and its computed style is not 'none'
+        return (
+          logoShortMobile &&
+          window.getComputedStyle(logoShortMobile).display !== "none"
+        );
+      }
+
+      if (logoShortMobile) {
+        // --- Event Listener for Mouse Enter ---
+        logoShortMobile.addEventListener("mouseenter", (event) => {
+          // Only proceed if the mobile logo is actually visible
+          if (isMobileLogoVisible()) {
+            createTooltipElement(); // Make sure the tooltip div exists
+
+            // Update position immediately on enter
+            const offsetX = 15; // Offset X from cursor
+            const offsetY = 10; // Offset Y from cursor
+            tooltipDiv.style.left = `${event.clientX + offsetX}px`;
+            tooltipDiv.style.top = `${event.clientY + offsetY}px`;
+
+            // Make it visible
+            tooltipDiv.style.opacity = "1";
+            tooltipDiv.style.visibility = "visible";
+          }
+        });
+
+        // --- Event Listener for Mouse Move ---
+        logoShortMobile.addEventListener("mousemove", (event) => {
+          // Only update if the tooltip exists and is supposed to be visible
+          if (
+            tooltipDiv &&
+            tooltipDiv.style.visibility === "visible" &&
+            isMobileLogoVisible()
+          ) {
+            const offsetX = 15; // pixels to the right of the cursor
+            const offsetY = 10; // pixels below the cursor
+
+            // Basic boundary check to prevent tooltip going off-screen
+            let left = event.clientX + offsetX;
+            let top = event.clientY + offsetY;
+            const tooltipWidth = tooltipDiv.offsetWidth;
+            const tooltipHeight = tooltipDiv.offsetHeight;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            // Adjust if too close to the right edge
+            if (left + tooltipWidth > viewportWidth - 10) {
+              // 10px buffer
+              left = event.clientX - tooltipWidth - offsetX; // Flip to left
+            }
+            // Adjust if too close to the bottom edge
+            if (top + tooltipHeight > viewportHeight - 10) {
+              // 10px buffer
+              top = event.clientY - tooltipHeight - offsetY; // Flip above
+            }
+
+            tooltipDiv.style.left = `${left}px`;
+            tooltipDiv.style.top = `${top}px`;
+          }
+        });
+
+        // --- Event Listener for Mouse Leave ---
+        logoShortMobile.addEventListener("mouseleave", () => {
+          if (tooltipDiv) {
+            tooltipDiv.style.opacity = "0";
+            tooltipDiv.style.visibility = "hidden";
+            // Optional: Move it off-screen immediately to prevent flickering
+            tooltipDiv.style.left = "-9999px";
+          }
+        });
+      } else {
+        console.warn(
+          "Mobile logo element (#logo .short) not found for tooltip."
+        );
+      }
+
+      // Optional: Hide tooltip if window is resized and mobile logo becomes hidden
+      window.addEventListener("resize", () => {
+        if (
+          tooltipDiv &&
+          tooltipDiv.style.visibility === "visible" &&
+          !isMobileLogoVisible()
+        ) {
+          if (tooltipDiv) {
+            tooltipDiv.style.opacity = "0";
+            tooltipDiv.style.visibility = "hidden";
+            tooltipDiv.style.left = "-9999px";
+          }
+        }
+      });
+
+      const professionElement = document.getElementById(
+        "typewriter-profession"
+      );
+      const titles = [
+        "Software Developer",
+        "Content Creator",
+        "Tech Enthusiast",
+      ]; // Add or change titles here
+      let titleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typeSpeed = 120; // Milliseconds per character typed
+      const deleteSpeed = 60; // Milliseconds per character deleted
+      const pauseTime = 1500; // Milliseconds to pause after typing a word
+
+      function typeWriterEffect() {
+        const currentTitle = titles[titleIndex];
+        let displayText = "";
+
+        if (isDeleting) {
+          // Deleting characters
+          displayText = currentTitle.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          // Typing characters
+          displayText = currentTitle.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        // Update the HTML element's text content
+        // Use textContent for better performance and security than innerHTML here
+        professionElement.textContent = displayText;
+
+        let timeOut = isDeleting ? deleteSpeed : typeSpeed;
+
+        // Check conditions to switch state or move to next title
+        if (!isDeleting && charIndex === currentTitle.length) {
+          // Finished typing the current title
+          isDeleting = true;
+          timeOut = pauseTime; // Pause before deleting
+        } else if (isDeleting && charIndex === 0) {
+          // Finished deleting the current title
+          isDeleting = false;
+          titleIndex = (titleIndex + 1) % titles.length; // Move to the next title (looping)
+          timeOut = typeSpeed / 2; // Short pause before typing next title
+        }
+
+        setTimeout(typeWriterEffect, timeOut);
+      }
+
+      // Start the effect when the DOM is loaded (optional but good practice)
+      document.addEventListener("DOMContentLoaded", () => {
+        // Ensure the element starts empty before the effect begins
+        if (professionElement) {
+          professionElement.textContent = ""; // Clear initial text just in case
+          setTimeout(typeWriterEffect, pauseTime / 2); // Initial delay before starting
+        }
+      });
+
+      // --- Existing JavaScript code below ---
+      // Show button when user scrolls down
+      window.onscroll = function () {
+        // ... (rest of your existing script) ...
+      };
+
+      // Scroll to top when clicked
+      document
+        .getElementById("scrollTopBtn")
+        .addEventListener("click", function () {
+          // ... (rest of your existing script) ...
+        });
+
+      // Hamburger menu functionality
       let nav = document.getElementById("nav-list");
       let navOpen = document.getElementById("open-hamberg");
       let navClose = document.getElementById("close-hamberg");
@@ -1164,10 +1844,47 @@
 
       document.querySelectorAll("#nav-list a").forEach((link) => {
         link.addEventListener("click", () => {
-          nav.classList.remove("active");
-          navOpen.style.display = "block";
-          navClose.style.display = "none";
+          if (nav.classList.contains("active")) {
+            // Close only if open
+            nav.classList.remove("active");
+            navOpen.style.display = "block";
+            navClose.style.display = "none";
+          }
         });
+      });
+
+      // Hire me button animation and scroll
+      document
+        .querySelector(".hirebtn a")
+        .addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default anchor behavior
+          const hireBtnDiv = document.querySelector(".hirebtn");
+          hireBtnDiv.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            hireBtnDiv.style.transform = "scale(1)";
+            const targetElement = document.querySelector(
+              this.getAttribute("href")
+            );
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 200);
+        });
+
+      // Smooth scrolling for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        // Exclude the hire me button link inside the hamburger menu if handled separately
+        if (!anchor.closest(".hirebtn")) {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector(
+              this.getAttribute("href")
+            );
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        }
       });
     </script>
   </body>
